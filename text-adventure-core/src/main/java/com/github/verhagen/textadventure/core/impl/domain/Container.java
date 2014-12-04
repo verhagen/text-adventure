@@ -1,44 +1,45 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
-import com.github.verhagen.textadventure.core.domain.IRoom;
 
-public final class Room extends Object implements IRoom {
-	private IContainer container = new Container();
-
-	public Room(String name, String description) {
-		super(name, description);
-	}
+public class Container implements IContainer {
+	private Map<String, IItem> content = new HashMap<>();
 
 	@Override
 	public Boolean isEmpty() {
-		return container.isEmpty();
+		return content.isEmpty();
 	}
 
 	@Override
 	public Boolean contains(String id) {
-		return container.contains(id);
+		return content.containsKey(id);
 	}
 
 	@Override
 	public Boolean contains(IItem item) {
-		return container.contains(item);
+		return contains(item.getId());
 	}
 
 	@Override
 	public void add(IItem item) {
-		container.add(item);
+		content.put(item.getId(), item);
 	}
 
 	@Override
 	public IItem remove(String id) {
-		return container.remove(id);
+		if (contains(id)) {
+			return content.remove(id);
+		}
+		return null;
 	}
 
 	@Override
 	public IItem remove(IItem item) {
-		return container.remove(item);
+		return remove(item.getId());
 	}
 
 }
