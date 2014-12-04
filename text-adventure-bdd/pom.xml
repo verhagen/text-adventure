@@ -20,12 +20,15 @@
 		</dependency>    	
     -->
 		<dependency>
+		    <groupId>com.github.verhagen.text-adventure</groupId>
+		    <artifactId>text-adventure-core</artifactId>
+		    <version>${parent.version}</version>
+		</dependency>    	
+
+		<dependency>
 			<groupId>org.jbehave</groupId>
 			<artifactId>jbehave-core</artifactId>
-			<version>3.9.3</version>
-			<!--
 			<version>4.0-beta-11</version>
-			-->
 		</dependency>
     </dependencies>
 
@@ -34,7 +37,7 @@
 			<plugin>
 				<groupId>org.jbehave</groupId>
 				<artifactId>jbehave-maven-plugin</artifactId>
-				<version>3.9.3</version>
+				<version>4.0-beta-11</version>
 				<executions>
 					<execution>
 						<id>run-stories-as-embeddables</id>
