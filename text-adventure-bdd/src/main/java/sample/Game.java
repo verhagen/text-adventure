@@ -27,7 +27,7 @@ public class Game {
 					renderer.addCell(".");
 				}
 				else {
-					renderer.addCell("0");
+					renderer.addCell("X");
 				}
 			}
 			renderer.nextRow();
