@@ -1,7 +1,10 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.Set;
+
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
+import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
 import com.github.verhagen.textadventure.core.domain.IRoom;
 
 public final class Room extends Object implements IRoom {
@@ -39,6 +42,17 @@ public final class Room extends Object implements IRoom {
 	@Override
 	public IItem remove(IItem item) {
 		return container.remove(item);
+	}
+
+	@Override
+	public Set<IItem> getItems() {
+		return container.getItems();
+	}
+
+	@Override
+	public void accept(IObjectVisitor visitor) {
+		visitor.accept(this);
+		visitor.accept(container);
 	}
 
 }

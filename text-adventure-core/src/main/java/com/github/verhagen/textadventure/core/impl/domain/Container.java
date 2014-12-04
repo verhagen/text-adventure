@@ -1,7 +1,10 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
@@ -40,6 +43,11 @@ public class Container implements IContainer {
 	@Override
 	public IItem remove(IItem item) {
 		return remove(item.getId());
+	}
+
+	@Override
+	public Set<IItem> getItems() {
+		return Collections.unmodifiableSet(new TreeSet<IItem>(content.values()));
 	}
 
 }

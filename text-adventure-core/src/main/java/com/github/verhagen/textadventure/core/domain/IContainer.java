@@ -1,5 +1,7 @@
 package com.github.verhagen.textadventure.core.domain;
 
+import java.util.Set;
+
 public interface IContainer {
 
 	Boolean isEmpty();
@@ -13,5 +15,7 @@ public interface IContainer {
 	IItem remove(final IItem item);
 
 	IItem remove(final String id);
+
+	Set<IItem> getItems();
 
 }

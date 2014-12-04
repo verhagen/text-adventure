@@ -2,6 +2,7 @@ package com.github.verhagen.textadventure.core.domain;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNull;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
@@ -35,6 +36,12 @@ public class ContainerTest {
 		IItem something = container.remove("book");
 		assertEquals(something, book);
 		assertTrue(container.isEmpty(), "The container should be empty.");
+	}
+
+	@Test
+	public void removeNoneExistingItem() {
+		IContainer container = new Container();
+		assertNull(container.remove("bread"));
 	}
 
 }

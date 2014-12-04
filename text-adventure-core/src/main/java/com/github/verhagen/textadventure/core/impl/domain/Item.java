@@ -1,8 +1,9 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
 import com.github.verhagen.textadventure.core.domain.IItem;
+import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
 
-public final class Item extends Object implements IItem {
+public final class Item extends Object implements IItem, Comparable<IItem> {
 	private final Boolean isPortable;
 	private final Boolean isContainer;
 
@@ -27,6 +28,15 @@ public final class Item extends Object implements IItem {
 	@Override
 	public Boolean isContainer() {
 		return isContainer;
+	}
+
+	@Override
+	public void accept(IObjectVisitor visitor) {
+		visitor.accept(this);
+	}
+	@Override
+	public int compareTo(IItem otherItem) {
+		return this.getId().compareTo(otherItem.getName());
 	}
 
 }

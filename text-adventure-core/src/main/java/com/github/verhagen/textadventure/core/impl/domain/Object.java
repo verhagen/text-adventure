@@ -36,5 +36,5 @@ public abstract class Object implements IObject {
 	public String getDescription() {
 		return description;
 	}
-	
+
 }

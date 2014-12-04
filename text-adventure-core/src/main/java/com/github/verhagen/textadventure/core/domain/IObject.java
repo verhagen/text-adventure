@@ -8,4 +8,6 @@ public interface IObject {
 	
 	String getDescription();
 
+	void accept(final IObjectVisitor visitor);
+
 }
