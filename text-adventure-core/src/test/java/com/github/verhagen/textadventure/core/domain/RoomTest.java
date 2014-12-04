@@ -13,6 +13,7 @@ public class RoomTest {
 		String name = "Hall";
 		String description = "There is a front door on the south and a door on the east.";
 		IRoom room = new Room(name, description);
+		assertEquals(room.getId(), name.toLowerCase());
 		assertEquals(room.getName(), name);
 		assertEquals(room.getDescription(), description);
 	}

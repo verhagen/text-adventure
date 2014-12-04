@@ -7,11 +7,14 @@ public final class Item extends Object implements IItem {
 	private final Boolean isContainer;
 
 	public Item(final String name, final String description) {
-		this(name, description, Boolean.FALSE, Boolean.FALSE);
+		this(null, name, description);
 	}
-	public Item(final String name, final String description,
+	public Item(final String id, final String name, final String description) {
+		this(id, name, description, Boolean.FALSE, Boolean.FALSE);
+	}
+	public Item(final String id, final String name, final String description,
 			final Boolean isPortable, final Boolean isContainer) {
-		super(name, description);
+		super(id, name, description);
 		this.isPortable = isPortable;
 		this.isContainer = isContainer;
 	}
