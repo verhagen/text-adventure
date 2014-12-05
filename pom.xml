@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
     
     <modules>
-    	<module>text-adventure-bdd</module>
+    	<module>text-adventure-cucumber</module>
+    	<module>text-adventure-jbehave</module>
     	<module>text-adventure-core</module>
     </modules>
 

@@ -8,9 +8,9 @@
 	    <version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-    <artifactId>text-adventure-bdd</artifactId>
+    <artifactId>text-adventure-jbehave</artifactId>
     <packaging>jar</packaging>
-    <name>Text Adventure - Behaviour-Driven Development</name>
+    <name>Text Adventure - Behaviour-Driven Development with JBehave</name>
     
     <dependencies>
     <!--
