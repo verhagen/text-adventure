@@ -16,7 +16,8 @@ public class InsideRoom extends JUnitStory {
     public Configuration configuration() {
         return new MostUsefulConfiguration()
             // where to find the stories
-            .useStoryLoader(new LoadFromClasspath(this.getClass()))  
+            .useStoryLoader(new LoadFromClasspath(this.getClass()))
+            .useStoryPathResolver(new DashCamelCaseResolver())
             // CONSOLE and TXT reporting
             .useStoryReporterBuilder(new StoryReporterBuilder().withDefaultFormats().withFormats(Format.CONSOLE, Format.TXT)); 
     }
