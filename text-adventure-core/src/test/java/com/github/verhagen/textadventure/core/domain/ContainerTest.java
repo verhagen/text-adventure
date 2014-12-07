@@ -44,4 +44,16 @@ public class ContainerTest {
 		assertNull(container.remove("bread"));
 	}
 
+	@Test
+	public void containsItem() {
+		IContainer container = new Container();
+		assertFalse(container.contains("bread"));
+		assertTrue(container.isEmpty());
+
+		Item bread = new Item("bread", null);
+		container.add(bread);
+		assertTrue(container.contains("bread"));
+		assertFalse(container.isEmpty());
+	}
+
 }

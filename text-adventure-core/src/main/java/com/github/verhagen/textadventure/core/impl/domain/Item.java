@@ -1,11 +1,15 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.Set;
+
+import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
 
 public final class Item extends Object implements IItem, Comparable<IItem> {
 	private final Boolean isPortable;
 	private final Boolean isContainer;
+	private final IContainer container;
 
 	public Item(final String name, final String description) {
 		this(null, name, description);
@@ -22,6 +26,12 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 		super(id, name, description);
 		this.isPortable = isPortable;
 		this.isContainer = isContainer;
+		if (isContainer) {
+			this.container = new Container();
+		}
+		else {
+			this.container = new NullContainer();
+		}
 	}
 
 	@Override
@@ -41,6 +51,34 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 	@Override
 	public int compareTo(IItem otherItem) {
 		return this.getId().compareTo(otherItem.getName());
+	}
+	@Override
+	public Boolean isEmpty() {
+		return container.isEmpty();
+	}
+	@Override
+	public Boolean contains(String id) {
+		return container.contains(id);
+	}
+	@Override
+	public Boolean contains(IItem item) {
+		return container.contains(item);
+	}
+	@Override
+	public void add(IItem item) {
+		container.add(item);		
+	}
+	@Override
+	public IItem remove(IItem item) {
+		return container.remove(item);
+	}
+	@Override
+	public IItem remove(String id) {
+		return container.remove(id);
+	}
+	@Override
+	public Set<IItem> getItems() {
+		return container.getItems();
 	}
 
 }
