@@ -8,10 +8,10 @@ Scenario: Start with an empty hall. Then add a book.
 Given a room called hall
 When the command look is given
 Then the description should be
-This is the hall.
+You are in a hall. There is some light comming in the hall, through a window next to the front door.
 When add item book is given
 Then the description should be
-This is the hall.Items: book
+You are in a hall. There is some light comming in the hall, through a window next to the front door. Items: book
 
 Scenario: Start with an empty hall. Then add a key. 
     And when looking in the hall, the key should be seen.
@@ -19,5 +19,5 @@ Given a room called hall
 When the command look is given
 When add item key is given
 Then the description should be
-This is the hall.Items: key
+You are in a hall. There is some light comming in the hall, through a window next to the front door. Items: key
 

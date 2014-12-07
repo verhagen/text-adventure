@@ -1,7 +1,5 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
-import java.util.Set;
-
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
@@ -18,12 +16,17 @@ public class TextVisitor implements IObjectVisitor {
 
 	@Override
 	public void accept(IRoom room) {
-		bldr.append(room.getDescription());
+		bldr.append("You are in a " + room.getName() + ".");
+		if (room.getDescription() != null) {
+			bldr.append(" ");
+			bldr.append(room.getDescription());
+		}
 	}
 
 	@Override
 	public void accept(IContainer container) {
 		if (! container.isEmpty()) {
+			bldr.append(" ");
 			bldr.append("Items: ");
 			for (IItem item : container.getItems()) {
 				item.accept(this);
