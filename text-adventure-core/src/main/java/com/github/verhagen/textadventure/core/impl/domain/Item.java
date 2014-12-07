@@ -13,6 +13,10 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 	public Item(final String id, final String name, final String description) {
 		this(id, name, description, Boolean.FALSE, Boolean.FALSE);
 	}
+	public Item(final String name, final String description,
+			final Boolean isPortable, final Boolean isContainer) {
+		this(null, name, description, isPortable, isContainer);
+	}
 	public Item(final String id, final String name, final String description,
 			final Boolean isPortable, final Boolean isContainer) {
 		super(id, name, description);
