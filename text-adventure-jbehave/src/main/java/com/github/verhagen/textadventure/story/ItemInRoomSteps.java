@@ -16,7 +16,7 @@ import com.github.verhagen.textadventure.core.impl.domain.Item;
 import com.github.verhagen.textadventure.core.impl.domain.Room;
 import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
 
-public class InsideRoomSteps {
+public class ItemInRoomSteps {
 	private IRoom room;
 	private Map<String, IItem> items = new HashMap<>(); 
 	
