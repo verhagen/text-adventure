@@ -14,11 +14,11 @@ public class TextVisitorTest {
 	public void visitEmptyHall() {
 		String description = "There is a front door on the south and a door on the east.";
 		IRoom hall = new Room("hall", description);
-		
+
 		TextVisitor visitor = new TextVisitor();
 		hall.accept(visitor);
-		
-		assertEquals(visitor.asText(), description);
+
+		assertEquals(visitor.asText(), "You are in a hall. " + description);
 	}
 
 	@Test
@@ -31,8 +31,8 @@ public class TextVisitorTest {
 
 		TextVisitor visitor = new TextVisitor();
 		hall.accept(visitor);
-		
-		assertEquals(visitor.asText(), description + "Items: " + book.getName());
+
+		assertEquals(visitor.asText(), "You are in a hall. " + description + " Items: " + book.getName());
 	}
 
 }
