@@ -20,6 +20,9 @@ public class CommandLookTest {
 		world.add(new Location("londen-center", "In the distance you see the big bang."));
 		world.start(createPlayer());
 		ICommand look = new CommandLook();
+		assertEquals(look.getName(), "look");
+		assertEquals(look.getDescription(), "Look around, or at a specific item.");
+
 		String expected = "You are in a londen-center. In the distance you see the big bang.";
 		
 		String result = world.execute(look, null);

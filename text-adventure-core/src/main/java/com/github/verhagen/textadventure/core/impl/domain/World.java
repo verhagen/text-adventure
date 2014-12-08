@@ -73,4 +73,11 @@ public class World extends Object implements IWorld {
 		this.player.setLocation(getStartLocation());
 	}
 
+	public void setStartLocation(String id) {
+		if (! locations.containsKey(id)) {
+			throw new TextAdventureRuntimeException("The given '" + id + "' is not a known location name.");
+		}
+		this.startLocationId = id;
+	}
+
 }

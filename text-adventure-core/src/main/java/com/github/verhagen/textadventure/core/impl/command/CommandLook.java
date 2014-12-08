@@ -6,7 +6,7 @@ import com.github.verhagen.textadventure.core.domain.IPlayer;
 public class CommandLook extends AbstractCommand {
 	
 	public CommandLook() {
-		super("look", (String)null);
+		super("look", "Look around, or at a specific item.", "l");
 	}
 
 	@Override

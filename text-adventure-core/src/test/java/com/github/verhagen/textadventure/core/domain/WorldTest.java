@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
 import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.Player;
+import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
 import com.github.verhagen.textadventure.core.impl.domain.World;
 
 public class WorldTest {
@@ -31,6 +32,20 @@ public class WorldTest {
 		assertEquals(world.get(locationId).getDescription(), "The kitchen looks clean and tidy.");
 		locationId = iter.next();
 		assertEquals(world.get(locationId).getDescription(), "There are some chairs and a sofa. In the corner stand a television.");
+	}
+
+	@Test(expectedExceptions = TextAdventureRuntimeException.class)
+	public void unknownStartLocation() {
+		World world = createWorld();
+		world.setStartLocation("garage");
+	}
+	
+	@Test
+	public void visit() {
+		World world = createWorld();
+		TextVisitor visitor = new TextVisitor();
+		world.accept(visitor);
+		assertEquals(visitor.asText(), "");
 	}
 
 	private World createWorld() {

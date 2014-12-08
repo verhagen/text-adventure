@@ -5,6 +5,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 
+import java.util.Set;
+
 import org.testng.annotations.Test;
 
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
@@ -40,4 +42,77 @@ public class CommandRegisteryTest {
 		commandRegistery.register(new CommandLook());
 	}
 
+	@Test
+	public void newCommandInventory() {
+		ICommand command = new CommandInventory();
+		assertEquals(command.getName(), "inventory");
+	}
+
+	@Test
+	public void newCommandWalk() {
+		ICommand command = new CommandWalk();
+		assertEquals(command.getName(), "walk");
+		assertTrue(command.getAliases().contains("g"), "Expecting alias 'g'.");
+		assertTrue(command.getAliases().contains("goto"), "Expecting alias 'goto'.");
+	}
+
+	@Test
+	public void newCommandGet() {
+		ICommand command = new CommandGet();
+		assertEquals(command.getName(), "get");
+	}
+
+	@Test
+	public void newCommandPut() {
+		ICommand command = new CommandPut();
+		assertEquals(command.getName(), "put");
+	}
+}
+
+
+class CommandInventory extends AbstractCommand {
+	public CommandInventory() {
+		super("inventory", "Shows your inventory.", (String)null);
+	}
+
+	@Override
+	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+		// nothing
+	}
+}
+
+
+class CommandWalk extends AbstractCommand {
+	public CommandWalk() {
+		super("walk", "Walk in a direction.", "g, goto, ,");
+	}
+
+	@Override
+	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+		// nothing
+	}
+}
+
+
+class CommandGet extends AbstractCommand {
+	public CommandGet() {
+		super("get", null, "");
+	}
+
+	@Override
+	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+		// nothing
+	}
+}
+
+
+class CommandPut extends AbstractCommand {
+	public CommandPut() {
+		super("put", "p");
+	}
+
+	@Override
+	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+		// nothing
+	}
 }
