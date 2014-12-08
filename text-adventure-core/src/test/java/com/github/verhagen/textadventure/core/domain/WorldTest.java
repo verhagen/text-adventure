@@ -1,6 +1,7 @@
 package com.github.verhagen.textadventure.core.domain;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -34,6 +35,11 @@ public class WorldTest {
 		assertEquals(world.get(locationId).getDescription(), "There are some chairs and a sofa. In the corner stand a television.");
 	}
 
+	@Test
+	public void standardStartLocation() {
+		World world = createWorld();
+		assertNotNull(world.getStartLocation(), "No start location was set, but just a location should be returned.");
+	}
 	@Test(expectedExceptions = TextAdventureRuntimeException.class)
 	public void unknownStartLocation() {
 		World world = createWorld();
