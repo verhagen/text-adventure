@@ -24,7 +24,7 @@ public class ItemInRoom {
 	public void aRoomCalledHall() {
 		System.out.println("[In the hall]");
 
-		room = new Room("hall", "This is the hall.");
+		room = new Room("hall", "There is some light comming in the hall, through a window next to the front door.");
 		items.put("book", new Item("book", "TRS-80 Color Computer Programs"));
 		items.put("key", new Item("key", "A cylinder key"));
 	}
