@@ -10,7 +10,8 @@
 
     <artifactId>text-adventure-jbehave</artifactId>
     <packaging>jar</packaging>
-    <name>Text Adventure - Behaviour-Driven Development with JBehave</name>
+    <name>Text Adventure - BDD with JBehave</name>
+    <description>Text Adventure - Behaviour-Driven Development with JBehave</description>
     
     <dependencies>
     <!--
