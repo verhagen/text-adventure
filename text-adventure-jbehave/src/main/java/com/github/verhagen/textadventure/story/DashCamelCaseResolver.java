@@ -10,12 +10,13 @@ import org.jbehave.core.io.StoryPathResolver;
 import org.jbehave.core.io.UnderscoredCamelCaseResolver;
 
 /**
- * Implementing own {@link StoryPathResolver} as the {@link UnderscoredCamelCaseResolver}
- * is not really configurable, for different separator character.
+ * Implements {@link StoryPathResolver} which can read dash separated story names. 
+ * Similar as the {@link UnderscoredCamelCaseResolver} which is not really configurable, 
+ * for different separator characters.
  * It also is not final, but the fields {@code resolutionPattern, locale, wordToRemove},
  * can not be used from an extended class.
  * No idea why there is a wordToRemote at all. And when it would be necessary, it would be
- * nicer to have it as a filter.
+ * nicer to have it as a filter. And create a proxy chain, in case the filter is needed.
  */
 public class DashCamelCaseResolver extends UnderscoredCamelCaseResolver {
 	private static final String SEPARATOR = "-";
