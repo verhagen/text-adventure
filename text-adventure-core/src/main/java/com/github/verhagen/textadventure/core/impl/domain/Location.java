@@ -5,12 +5,12 @@ import java.util.Set;
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
-import com.github.verhagen.textadventure.core.domain.IRoom;
+import com.github.verhagen.textadventure.core.domain.ILocation;
 
-public final class Room extends Object implements IRoom {
+public final class Location extends Object implements ILocation {
 	private IContainer container = new Container();
 
-	public Room(String name, String description) {
+	public Location(String name, String description) {
 		super(name, description);
 	}
 

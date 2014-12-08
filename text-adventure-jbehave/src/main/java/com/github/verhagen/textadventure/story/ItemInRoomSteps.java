@@ -11,18 +11,18 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 import com.github.verhagen.textadventure.core.domain.IItem;
-import com.github.verhagen.textadventure.core.domain.IRoom;
+import com.github.verhagen.textadventure.core.domain.ILocation;
 import com.github.verhagen.textadventure.core.impl.domain.Item;
-import com.github.verhagen.textadventure.core.impl.domain.Room;
+import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
 
 public class ItemInRoomSteps {
-	private IRoom room;
+	private ILocation room;
 	private Map<String, IItem> items = new HashMap<>(); 
 	
 	@Given("a room called hall")
 	public void givenARoomCalledHall() {
-		room = new Room("hall", "There is some light comming in the hall, through a window next to the front door.");
+		room = new Location("hall", "There is some light comming in the hall, through a window next to the front door.");
 		items.put("book", new Item("book", "TRS-80 Color Computer Programs"));
 		items.put("key", new Item("key", "A cylinder key"));
 	}

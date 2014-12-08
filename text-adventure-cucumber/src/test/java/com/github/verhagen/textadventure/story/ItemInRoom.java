@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.github.verhagen.textadventure.core.domain.IItem;
-import com.github.verhagen.textadventure.core.domain.IRoom;
+import com.github.verhagen.textadventure.core.domain.ILocation;
 import com.github.verhagen.textadventure.core.impl.domain.Item;
-import com.github.verhagen.textadventure.core.impl.domain.Room;
+import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
 
 import cucumber.api.java.en.Given;
@@ -17,14 +17,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ItemInRoom {
-	private IRoom room;
+	private ILocation room;
 	private Map<String, IItem> items = new HashMap<>(); 
 
 	@Given("^a room called hall$")
 	public void aRoomCalledHall() {
 		System.out.println("[In the hall]");
 
-		room = new Room("hall", "There is some light comming in the hall, through a window next to the front door.");
+		room = new Location("hall", "There is some light comming in the hall, through a window next to the front door.");
 		items.put("book", new Item("book", "TRS-80 Color Computer Programs"));
 		items.put("key", new Item("key", "A cylinder key"));
 	}

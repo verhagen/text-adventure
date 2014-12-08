@@ -10,15 +10,15 @@ import java.util.Set;
 import org.testng.annotations.Test;
 
 import com.github.verhagen.textadventure.core.impl.domain.Item;
-import com.github.verhagen.textadventure.core.impl.domain.Room;
+import com.github.verhagen.textadventure.core.impl.domain.Location;
 
-public class RoomTest {
+public class LocationTest {
 	private final String name = "Hall";
 	private final String description = "There is a front door on the south and a door on the east.";
 	
 	@Test
-	public void roomNameAndDescription() {
-		IRoom room = createHall();
+	public void locationNameAndDescription() {
+		ILocation room = createHall();
 		assertEquals(room.getId(), name.toLowerCase());
 		assertEquals(room.getName(), name);
 		assertEquals(room.getDescription(), description);
@@ -26,7 +26,7 @@ public class RoomTest {
 	
 	@Test
 	public void roomContainsBook() {
-		IRoom hall = createHall();
+		ILocation hall = createHall();
 		assertTrue(hall.isEmpty());
 
 		IItem book = createBook();
@@ -57,12 +57,12 @@ public class RoomTest {
 		assertTrue(hall.isEmpty(), "Nothing should be anymore in the hall.");
 	}
 
-	private Room createHall() {
+	private ILocation createHall() {
 		return createRoom(name, description);
 	}
 
-	private Room createRoom(String name, String description) {
-		return new Room(name, description);
+	private ILocation createRoom(String name, String description) {
+		return new Location(name, description);
 	}
 
 	private IItem createBook() {

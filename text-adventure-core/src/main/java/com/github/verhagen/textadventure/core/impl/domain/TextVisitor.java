@@ -3,7 +3,7 @@ package com.github.verhagen.textadventure.core.impl.domain;
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
-import com.github.verhagen.textadventure.core.domain.IRoom;
+import com.github.verhagen.textadventure.core.domain.ILocation;
 
 public class TextVisitor implements IObjectVisitor {
 	private StringBuilder bldr = new StringBuilder();
@@ -15,7 +15,7 @@ public class TextVisitor implements IObjectVisitor {
 	}
 
 	@Override
-	public void accept(IRoom room) {
+	public void accept(ILocation room) {
 		bldr.append("You are in a " + room.getName() + ".");
 		if (room.getDescription() != null) {
 			bldr.append(" ");
