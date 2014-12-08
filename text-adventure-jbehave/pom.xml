@@ -44,7 +44,8 @@
 						<phase>integration-test</phase>
 						<configuration>
 							<includes>
-								<include>**/*ICanToggleACell.java</include>
+								<include>**/ItemInRoom.java</include>
+								<include>**/ItemInItem.java</include>
 							</includes>
 							<!--
 							<metaFilters>
