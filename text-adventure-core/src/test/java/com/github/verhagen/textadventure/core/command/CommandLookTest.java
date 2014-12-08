@@ -10,7 +10,7 @@ import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.Player;
 import com.github.verhagen.textadventure.core.impl.domain.World;
 
-public class TestCommandLook {
+public class CommandLookTest {
 
 	@Test
 	public void look() {
