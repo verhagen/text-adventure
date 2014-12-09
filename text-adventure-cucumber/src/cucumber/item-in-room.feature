@@ -1,4 +1,4 @@
-Feature: Room
+Feature: Items in a Room
 
 Scenario: A scenario is a collection of executable steps of different type
 

@@ -1,4 +1,4 @@
-Inside a Room
+Items in a Room
 
 Narrative: When inside a room (or at a location) you get information about the
     location and see the items, that are there.
