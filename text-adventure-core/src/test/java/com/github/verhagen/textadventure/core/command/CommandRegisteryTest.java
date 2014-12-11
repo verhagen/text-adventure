@@ -65,52 +65,56 @@ public class CommandRegisteryTest {
 		ICommand command = new CommandPut();
 		assertEquals(command.getName(), "put");
 	}
-}
+
+	
+	// Inner classes
+
+    class CommandInventory extends AbstractCommand {
+    	public CommandInventory() {
+    		super("inventory", "Shows your inventory.", (String)null);
+    	}
+    
+    	@Override
+    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    		// nothing
+    	}
+    }
+    
+    
+    class CommandWalk extends AbstractCommand {
+    	public CommandWalk() {
+    		super("walk", "Walk in a direction.", "g, goto, ,");
+    	}
+    
+    	@Override
+    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    		// nothing
+    	}
+    }
+    
+    
+    class CommandGet extends AbstractCommand {
+    	public CommandGet() {
+    		super("get", null, "");
+    	}
+    
+    	@Override
+    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    		// nothing
+    	}
+    }
+    
+    
+    class CommandPut extends AbstractCommand {
+    	public CommandPut() {
+    		super("put", "p");
+    	}
+    
+    	@Override
+    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    		// nothing
+    	}
+    }
 
 
-class CommandInventory extends AbstractCommand {
-	public CommandInventory() {
-		super("inventory", "Shows your inventory.", (String)null);
-	}
-
-	@Override
-	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
-		// nothing
-	}
-}
-
-
-class CommandWalk extends AbstractCommand {
-	public CommandWalk() {
-		super("walk", "Walk in a direction.", "g, goto, ,");
-	}
-
-	@Override
-	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
-		// nothing
-	}
-}
-
-
-class CommandGet extends AbstractCommand {
-	public CommandGet() {
-		super("get", null, "");
-	}
-
-	@Override
-	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
-		// nothing
-	}
-}
-
-
-class CommandPut extends AbstractCommand {
-	public CommandPut() {
-		super("put", "p");
-	}
-
-	@Override
-	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
-		// nothing
-	}
 }

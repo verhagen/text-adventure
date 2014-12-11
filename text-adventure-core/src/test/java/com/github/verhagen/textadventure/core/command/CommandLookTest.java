@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IPlayer;
+import com.github.verhagen.textadventure.core.domain.IWorld;
 import com.github.verhagen.textadventure.core.impl.command.CommandLook;
 import com.github.verhagen.textadventure.core.impl.domain.Item;
 import com.github.verhagen.textadventure.core.impl.domain.Location;
@@ -31,30 +32,41 @@ public class CommandLookTest {
 
 	@Test
 	public void lookAtTomb() {
-		World world = new World(null, "Emperor's Tomb", null);
-		Location crypt = createCrypt();
-		IItem tomb = createTomb();
-		crypt.add(tomb);
-		world.add(crypt);
-		world.start(createPlayer());
+	    IWorld world = createWorld();
 		ICommand look = new CommandLook();
 		// FIXME Correct feedback, does not include tomb description
 		String expected = "You are in a crypt. The crypt is cold and dark. A slight beam of light, shows that the tomb stands in the middle of the room."
 				+ " Items: tomb";
 		
-		String result = world.execute(look, new String[] { tomb.getName() });
+		String result = world.execute(look, new String[] { "tomb" });
 		assertEquals(result, expected);
 	}
 
-	private Location createCrypt() {
+
+	static IWorld createWorld() {
+        World world = new World(null, "Emperor's Tomb", null);
+        Location crypt = createCrypt();
+        IItem tomb = createTomb();
+        crypt.add(tomb);
+        world.add(crypt);
+        world.start(createPlayer());
+        return world;
+	}
+
+	static IWorld createWorld(World world, IItem item) {
+	    world.getStartLocation().add(item);
+	    return world;
+	}
+
+	private static Location createCrypt() {
 		return new Location("crypt", "The crypt is cold and dark. A slight beam of light, shows that the tomb stands in the middle of the room.");
 	}
 
-	private IItem createTomb() {
+	private static IItem createTomb() {
 		return new Item("tomb", "The tomb has lots of amazing egravings.");
 	}
 
-	private IPlayer createPlayer() {
+	private static IPlayer createPlayer() {
 		return new Player("indiana.jones-lucasfilm.com", "Indiana Jones");
 	}
 
