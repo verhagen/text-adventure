@@ -9,6 +9,12 @@ public class TextVisitor implements IObjectVisitor {
 	private StringBuilder bldr = new StringBuilder();
 
 
+    @Override
+    public void append(String text) {
+        bldr.append(text);
+    }
+
+
 	@Override
 	public void accept(IItem item) {
 		bldr.append(item.getName());
@@ -37,4 +43,5 @@ public class TextVisitor implements IObjectVisitor {
 	public String asText() {
 		return bldr.toString();
 	}
+
 }

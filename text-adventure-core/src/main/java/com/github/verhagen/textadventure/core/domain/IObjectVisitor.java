@@ -8,4 +8,6 @@ public interface IObjectVisitor {
 
 	void accept(IContainer container);
 
+    void append(String string);
+
 }
