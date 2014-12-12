@@ -8,9 +8,9 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
-import com.github.verhagen.textadventure.core.impl.command.WorldRegistery;
 import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.World;
+import com.github.verhagen.textadventure.core.impl.domain.WorldRegistery;
 
 public class WorldRegisteryTest {
 	

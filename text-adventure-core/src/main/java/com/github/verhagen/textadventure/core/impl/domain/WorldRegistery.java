@@ -1,4 +1,4 @@
-package com.github.verhagen.textadventure.core.impl.command;
+package com.github.verhagen.textadventure.core.impl.domain;
 
 import java.util.Map;
 import java.util.TreeMap;
