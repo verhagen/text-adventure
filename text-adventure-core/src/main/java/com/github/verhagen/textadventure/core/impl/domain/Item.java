@@ -3,7 +3,6 @@ package com.github.verhagen.textadventure.core.impl.domain;
 import java.util.Collections;
 import java.util.Set;
 import java.util.SortedMap;
-import java.util.SortedSet;
 import java.util.TreeMap;
 
 import com.github.verhagen.textadventure.core.domain.IAttribute;
