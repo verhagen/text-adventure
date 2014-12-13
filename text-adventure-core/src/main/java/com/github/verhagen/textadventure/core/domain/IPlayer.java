@@ -8,9 +8,9 @@ public interface IPlayer extends IContainer {
 	
 	ILocation getLocation();
 
-	void get(String id);
-	
-	void drop(String id);
+//	void get(String id);
+//	
+//	void drop(String id);
 
 	void setLocation(ILocation startLocation);
 

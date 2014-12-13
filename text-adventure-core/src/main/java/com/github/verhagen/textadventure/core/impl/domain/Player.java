@@ -34,21 +34,21 @@ public class Player implements IPlayer {
 		return location;
 	}
 
-	@Override
-	public void get(final String id) {
-		if (getLocation().contains(id)) {
-			IItem item = getLocation().remove(id);
-			add(item);
-		}
-	}
-
-	@Override
-	public void drop(final String id) {
-		if (contains(id)) {
-			IItem item = remove(id);
-			getLocation().add(item);
-		}
-	}
+//	@Override
+//	public void get(final String id) {
+//		if (getLocation().contains(id)) {
+//			IItem item = getLocation().remove(id);
+//			add(item);
+//		}
+//	}
+//
+//	@Override
+//	public void drop(final String id) {
+//		if (contains(id)) {
+//			IItem item = remove(id);
+//			getLocation().add(item);
+//		}
+//	}
 
 	@Override
 	public void setLocation(final ILocation location) {
