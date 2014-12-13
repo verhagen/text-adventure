@@ -18,7 +18,7 @@ public abstract class AbstractCommand implements ICommand {
 //	public AbstractCommand(final String name, final Set<String> aliases) {
 //		this(name, null, aliases);
 //	}
-	public AbstractCommand(final String name, final String description, String aliases) {
+	public AbstractCommand(final String name, final String description, final String aliases) {
 		this(name, description, split(aliases));
 	}
 	public AbstractCommand(final String name, final String description, final Set<String> aliases) {
@@ -50,7 +50,7 @@ public abstract class AbstractCommand implements ICommand {
 
 	private static Set<String> split(String aliasesStr) {
     	if (aliasesStr == null || aliasesStr.trim().length() == 0) {
-    		return Collections.emptySet();
+    	    return null;
     	}
 
         SortedSet<String> aliases = new TreeSet<>();

@@ -1,9 +1,13 @@
 package com.github.verhagen.textadventure.core.domain;
 
+import java.util.Set;
+
 public interface IWorldRegistery {
 
-	Boolean exists(String id);
+    Set<IWorld> getWorlds();
 
-	IWorld get(String id);
+	Boolean exists(final String id);
+
+	IWorld get(final String id);
 
 }

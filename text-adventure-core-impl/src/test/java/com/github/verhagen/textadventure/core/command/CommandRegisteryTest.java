@@ -40,6 +40,13 @@ public class CommandRegisteryTest {
 		commandRegistery.register(new CommandLook());
 	}
 
+    @Test(expectedExceptions = TextAdventureRuntimeException.class)
+    public void aliasAlreadyExists() {
+        CommandRegistery commandRegistery = new CommandRegistery();
+        commandRegistery.register(new CommandInventory());
+        commandRegistery.register(new CommandInspect());
+    }
+
 	@Test
 	public void newCommandInventory() {
 		ICommand command = new CommandInventory();
@@ -71,13 +78,25 @@ public class CommandRegisteryTest {
 
     class CommandInventory extends AbstractCommand {
     	public CommandInventory() {
-    		super("inventory", "Shows your inventory.", (String)null);
+    		super("inventory", "Shows your inventory.", "i");
     	}
     
     	@Override
     	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
     		// nothing
     	}
+    }
+    
+
+    class CommandInspect extends AbstractCommand {
+        public CommandInspect() {
+            super("inspect", "Inspects an item.", "i");
+        }
+    
+        @Override
+        public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+            // nothing
+        }
     }
     
     

@@ -31,7 +31,7 @@ public class ItemTest {
 		assertFalse(couch.isPorable(), "The key should not be portable.");
 		assertFalse(couch.isContainer(), "The key should not be a container.");
 		
-		assertTrue(couch.getAttributeNames().size() == 0);
+		assertEquals(couch.getAttributeNames().size(), 0);
 	}
 
 	@Test

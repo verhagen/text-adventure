@@ -1,6 +1,9 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
@@ -29,5 +32,10 @@ public class WorldRegistery implements IWorldRegistery {
 		}
 		return worlds.get(id);
 	}
+
+    @Override
+    public Set<IWorld> getWorlds() {
+        return Collections.unmodifiableSet(new HashSet<IWorld>(worlds.values()));
+    }
 
 }

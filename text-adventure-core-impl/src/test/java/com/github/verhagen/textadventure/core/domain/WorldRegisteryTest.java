@@ -22,6 +22,10 @@ public class WorldRegisteryTest {
 		assertTrue(worldRegistery.exists("the house quest"));
 		assertFalse(worldRegistery.exists("kings quest"));
 
+		assertNotNull(worldRegistery.getWorlds());
+        assertEquals(worldRegistery.getWorlds().size(), 1);
+        assertEquals(worldRegistery.getWorlds().iterator().next().getId(), "the house quest");
+		
 		IWorld world = worldRegistery.get("the house quest");
 		assertNotNull(world, "Expected to find world.");
 		assertEquals(world.getId(), "the house quest");
