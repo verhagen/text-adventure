@@ -1,7 +1,12 @@
 package com.github.verhagen.textadventure.core.impl.domain;
 
+import java.util.Collections;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeMap;
 
+import com.github.verhagen.textadventure.core.domain.IAttribute;
 import com.github.verhagen.textadventure.core.domain.IContainer;
 import com.github.verhagen.textadventure.core.domain.IItem;
 import com.github.verhagen.textadventure.core.domain.IObjectVisitor;
@@ -10,6 +15,7 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 	private final Boolean isPortable;
 	private final Boolean isContainer;
 	private final IContainer container;
+	private final SortedMap<String, IAttribute<?>> attributes = new TreeMap<>();
 
 	public Item(final String name, final String description) {
 		this(null, name, description);
@@ -84,5 +90,20 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 	public Set<IItem> getItems() {
 		return container.getItems();
 	}
+
+	@Override
+    public Set<String> getAttributeNames() {
+        return Collections.unmodifiableSet(attributes.keySet());
+    }
+
+    @Override
+    public void addAttribute(IAttribute<?> attribute) {
+        attributes.put(attribute.getName(), attribute);
+    }
+
+    @Override
+    public IAttribute<?> getAttribute(String name) {
+        return attributes.get(name);
+    }
 
 }

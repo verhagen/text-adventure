@@ -42,7 +42,7 @@ public class CommandInventoryTest {
     }
 
     @Test
-    public void xx() {
+    public void tryGetSomethingThatIsNotThere() {
         IWorld world = CommandLookTest.createWorld();
         CommandGet get = new CommandGet();
         String result = world.execute(get, new String[] { "book" } );

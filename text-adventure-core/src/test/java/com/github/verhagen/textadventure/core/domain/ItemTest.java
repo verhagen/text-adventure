@@ -10,10 +10,12 @@ import java.util.TreeSet;
 
 import org.testng.annotations.Test;
 
+import com.github.verhagen.textadventure.core.impl.domain.AttributeFactory;
 import com.github.verhagen.textadventure.core.impl.domain.Item;
 import com.github.verhagen.textadventure.core.impl.domain.NullContainer;
 
 public class ItemTest {
+    private AttributeFactory attributeFactory = new AttributeFactory();
 
 	@Test
 	public void couch() {
@@ -28,6 +30,8 @@ public class ItemTest {
 		assertEquals(couch.getDescription(), description);
 		assertFalse(couch.isPorable(), "The key should not be portable.");
 		assertFalse(couch.isContainer(), "The key should not be a container.");
+		
+		assertTrue(couch.getAttributeNames().size() == 0);
 	}
 
 	@Test
@@ -52,17 +56,22 @@ public class ItemTest {
         aliases.add("notation");
         aliases.add("remark");
         IItem note = new Item(null, name, description, Boolean.TRUE, Boolean.FALSE, aliases);
+        note.addAttribute(attributeFactory.create("text", "The lazy dog jumped over the quick brown fox"));
 
         assertEquals(note.getId(), name);
         assertEquals(note.getName(), name);
         assertNotNull(note.getAliases(), "Aliases should never be null.");
         assertEquals(note.getAliases().size(),  3);
-        assertTrue(note.getAliases().contains("comment"),  "Expected note to have alias 'comment'");
-        assertTrue(note.getAliases().contains("notation"),  "Expected note to have alias 'notation'");
-        assertTrue(note.getAliases().contains("remark"),  "Expected note to have alias 'remark'");
+        assertTrue(note.getAliases().contains("comment"), "Expected note to have alias 'comment'");
+        assertTrue(note.getAliases().contains("notation"), "Expected note to have alias 'notation'");
+        assertTrue(note.getAliases().contains("remark"), "Expected note to have alias 'remark'");
         assertEquals(note.getDescription(), description);
         assertTrue(note.isPorable(), "The note should be portable.");
         assertFalse(note.isContainer(), "The note should not be a container.");
+        
+        assertTrue(note.getAttributeNames().size() > 0, "Expecting a note with attributes");
+        assertTrue(note.getAttributeNames().contains("text"), "Expecting a note with attribute 'text'");
+        assertEquals(note.getAttribute("text").getValue(), "The lazy dog jumped over the quick brown fox");
     }
 
 	@Test(expectedExceptions = NullContainer.ContainerException.class)

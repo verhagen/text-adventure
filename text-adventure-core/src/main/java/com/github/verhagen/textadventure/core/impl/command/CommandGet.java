@@ -16,8 +16,9 @@ public class CommandGet extends AbstractCommand {
 
     @Override
     public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
-        if (args == null || args.length == 0) {
+        if (args == null || args.length == 0 || "".equals(args[0].trim())) {
             visitor.append("Wat should be taken?");
+            return;
         }
 
         String itemId = "map";
