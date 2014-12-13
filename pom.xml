@@ -12,6 +12,7 @@
     	<module>text-adventure-cucumber</module>
     	<module>text-adventure-jbehave</module>
     	<module>text-adventure-core</module>
+    	<module>text-adventure-core-impl</module>
     </modules>
 
 	<properties>

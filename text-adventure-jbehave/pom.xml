@@ -22,7 +22,7 @@
     -->
 		<dependency>
 		    <groupId>com.github.verhagen.text-adventure</groupId>
-		    <artifactId>text-adventure-core</artifactId>
+		    <artifactId>text-adventure-core-impl</artifactId>
 		    <version>${project.parent.version}</version>
 		</dependency>    	
 
