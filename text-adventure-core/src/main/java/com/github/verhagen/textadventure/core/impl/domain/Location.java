@@ -10,9 +10,12 @@ import com.github.verhagen.textadventure.core.domain.ILocation;
 public final class Location extends Object implements ILocation {
 	private IContainer container = new Container();
 
-	public Location(String name, String description) {
-		super(name, description);
+	public Location(final String name, final String description) {
+		this(name, description, null);
 	}
+    public Location(final String name, final String description, Set<String> aliases) {
+        super(null, name, description, aliases);
+    }
 
 	@Override
 	public Boolean isEmpty() {

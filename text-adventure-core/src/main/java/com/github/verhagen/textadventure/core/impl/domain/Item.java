@@ -21,9 +21,13 @@ public final class Item extends Object implements IItem, Comparable<IItem> {
 			final Boolean isPortable, final Boolean isContainer) {
 		this(null, name, description, isPortable, isContainer);
 	}
+    public Item(final String id, final String name, final String description,
+            final Boolean isPortable, final Boolean isContainer) {
+        this(id, name, description, isPortable, isContainer, null);
+    }
 	public Item(final String id, final String name, final String description,
-			final Boolean isPortable, final Boolean isContainer) {
-		super(id, name, description);
+			final Boolean isPortable, final Boolean isContainer, final Set<String> aliases) {
+		super(id, name, description, aliases);
 		this.isPortable = isPortable;
 		this.isContainer = isContainer;
 		if (isContainer) {

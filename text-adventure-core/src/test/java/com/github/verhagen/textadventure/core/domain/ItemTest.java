@@ -2,9 +2,11 @@ package com.github.verhagen.textadventure.core.domain;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
 import static org.testng.Assert.assertTrue;
 
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.testng.annotations.Test;
 
@@ -21,6 +23,8 @@ public class ItemTest {
 
 		assertEquals(couch.getId(), name);
 		assertEquals(couch.getName(), name);
+        assertNotNull(couch.getAliases(), "Aliases should never be null.");
+        assertEquals(couch.getAliases().size(),  0);
 		assertEquals(couch.getDescription(), description);
 		assertFalse(couch.isPorable(), "The key should not be portable.");
 		assertFalse(couch.isContainer(), "The key should not be a container.");
@@ -38,6 +42,28 @@ public class ItemTest {
 		assertTrue(key.isPorable(), "The key should be portable.");
 		assertFalse(key.isContainer(), "The key should not be a container.");
 	}
+
+    @Test
+    public void note() {
+        String name = "note";
+        String description = "The note shows some text.";
+        Set<String> aliases = new TreeSet<>();
+        aliases.add("comment");
+        aliases.add("notation");
+        aliases.add("remark");
+        IItem note = new Item(null, name, description, Boolean.TRUE, Boolean.FALSE, aliases);
+
+        assertEquals(note.getId(), name);
+        assertEquals(note.getName(), name);
+        assertNotNull(note.getAliases(), "Aliases should never be null.");
+        assertEquals(note.getAliases().size(),  3);
+        assertTrue(note.getAliases().contains("comment"),  "Expected note to have alias 'comment'");
+        assertTrue(note.getAliases().contains("notation"),  "Expected note to have alias 'notation'");
+        assertTrue(note.getAliases().contains("remark"),  "Expected note to have alias 'remark'");
+        assertEquals(note.getDescription(), description);
+        assertTrue(note.isPorable(), "The note should be portable.");
+        assertFalse(note.isContainer(), "The note should not be a container.");
+    }
 
 	@Test(expectedExceptions = NullContainer.ContainerException.class)
 	public void keyCanNotHoldItems() {
