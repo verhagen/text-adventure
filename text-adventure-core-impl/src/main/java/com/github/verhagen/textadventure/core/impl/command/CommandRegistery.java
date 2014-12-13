@@ -19,6 +19,9 @@ public class CommandRegistery implements ICommandRegistery {
 		}
 		
 		commands.put(command.getName(), command);
+		for (String alias : command.getAliases()) {
+		    commands.put(alias, command);
+		}
 	}
 
 	public Boolean exists(ICommand command) {
