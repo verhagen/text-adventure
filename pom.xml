@@ -9,10 +9,13 @@
     <packaging>pom</packaging>
     
     <modules>
-    	<module>text-adventure-cucumber</module>
-    	<module>text-adventure-jbehave</module>
     	<module>text-adventure-core</module>
     	<module>text-adventure-core-impl</module>
+    	
+    	<module>text-adventure-restful-server</module>
+
+    	<module>text-adventure-cucumber</module>
+    	<module>text-adventure-jbehave</module>
     </modules>
 
 	<properties>
