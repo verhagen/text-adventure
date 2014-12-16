@@ -8,9 +8,9 @@ import java.util.TreeMap;
 
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
 import com.github.verhagen.textadventure.core.domain.IWorld;
-import com.github.verhagen.textadventure.core.domain.IWorldRegistery;
+import com.github.verhagen.textadventure.core.domain.IWorldRepository;
 
-public class WorldRegistery implements IWorldRegistery {
+public class WorldRepository implements IWorldRepository {
 	private Map<String, IWorld> worlds = new TreeMap<>();
 
 	public void register(IWorld world) {

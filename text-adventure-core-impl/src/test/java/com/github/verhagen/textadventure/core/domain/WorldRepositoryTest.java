@@ -10,23 +10,23 @@ import org.testng.annotations.Test;
 import com.github.verhagen.textadventure.core.TextAdventureRuntimeException;
 import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.World;
-import com.github.verhagen.textadventure.core.impl.domain.WorldRegistery;
+import com.github.verhagen.textadventure.core.impl.domain.WorldRepository;
 
-public class WorldRegisteryTest {
+public class WorldRepositoryTest {
 	
 	@Test
 	public void register() {
-		WorldRegistery worldRegistery = new WorldRegistery();
-		worldRegistery.register(createWorld());
+		WorldRepository worldRepo = new WorldRepository();
+		worldRepo.register(createWorld());
 
-		assertTrue(worldRegistery.exists("the house quest"));
-		assertFalse(worldRegistery.exists("kings quest"));
+		assertTrue(worldRepo.exists("the house quest"));
+		assertFalse(worldRepo.exists("kings quest"));
 
-		assertNotNull(worldRegistery.getWorlds());
-        assertEquals(worldRegistery.getWorlds().size(), 1);
-        assertEquals(worldRegistery.getWorlds().iterator().next().getId(), "the house quest");
+		assertNotNull(worldRepo.getWorlds());
+        assertEquals(worldRepo.getWorlds().size(), 1);
+        assertEquals(worldRepo.getWorlds().iterator().next().getId(), "the house quest");
 		
-		IWorld world = worldRegistery.get("the house quest");
+		IWorld world = worldRepo.get("the house quest");
 		assertNotNull(world, "Expected to find world.");
 		assertEquals(world.getId(), "the house quest");
 		assertEquals(world.getName(), "The house quest");
@@ -35,8 +35,15 @@ public class WorldRegisteryTest {
 
 	@Test(expectedExceptions = TextAdventureRuntimeException.class)
 	public void unknownWorld() {
-		WorldRegistery worldRegistery = new WorldRegistery();
+		WorldRepository worldRegistery = new WorldRepository();
 		worldRegistery.get("adventure");
+	}
+
+
+	public WorldRepository createWorldRepository() {
+		WorldRepository worldRepo = new WorldRepository();
+		worldRepo.register(createWorld());
+		return worldRepo;
 	}
 
 	private IWorld createWorld() {

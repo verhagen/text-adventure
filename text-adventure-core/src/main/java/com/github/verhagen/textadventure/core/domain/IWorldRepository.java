@@ -2,7 +2,7 @@ package com.github.verhagen.textadventure.core.domain;
 
 import java.util.Set;
 
-public interface IWorldRegistery {
+public interface IWorldRepository {
 
     Set<IWorld> getWorlds();
 
