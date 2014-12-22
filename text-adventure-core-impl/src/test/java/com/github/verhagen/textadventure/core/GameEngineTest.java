@@ -25,7 +25,10 @@ public class GameEngineTest {
         gameEngine.start(world.getId(), james);
 		
 		String result = gameEngine.execute(james, "get key");
-		assertEquals(result, "You pick-up a key.");
+		assertEquals(result, "Nothing here that looks like a key");
+
+		result = gameEngine.execute(james, "get book");
+        assertEquals(result, "You took the book");
 	}
 
 	@Test(expectedExceptions = TextAdventureRuntimeException.class)

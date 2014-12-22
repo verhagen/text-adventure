@@ -42,8 +42,7 @@ public class GameEngine {
 	    String commandName = commandStr.substring(0, commandStr.indexOf(' '));
 	    Boolean commandExists = commandRegistery.exists(commandName);
 	    if (commandExists) {
-	        worldPerUser.get(account).execute(commandRegistery.get(commandName), commandStr.substring(commandStr.indexOf(' ')));
-	        return "You pick-up a key.";
+	        return worldPerUser.get(account).execute(commandRegistery.get(commandName), commandStr.substring(commandStr.indexOf(' ')));
 	    }
 	    return "Not sure what to do.";
 	}
