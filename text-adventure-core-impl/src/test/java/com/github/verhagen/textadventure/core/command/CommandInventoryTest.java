@@ -29,7 +29,7 @@ public class CommandInventoryTest {
         IWorld world = CommandLookTest.createWorld();
         world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
         CommandGet get = new CommandGet();
-        String result = world.execute(get, new String[] { "map" } );
+        String result = world.execute(get, "map");
  
         String expected = "You took the map";
         assertEquals(result, expected);
@@ -45,7 +45,7 @@ public class CommandInventoryTest {
     public void tryGetSomethingThatIsNotThere() {
         IWorld world = CommandLookTest.createWorld();
         CommandGet get = new CommandGet();
-        String result = world.execute(get, new String[] { "book" } );
+        String result = world.execute(get, "book");
  
         String expected = "Nothing here that looks like a book";
         assertEquals(result, expected);

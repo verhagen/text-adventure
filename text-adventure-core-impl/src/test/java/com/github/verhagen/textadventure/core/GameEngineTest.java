@@ -21,16 +21,23 @@ public class GameEngineTest {
 		Set<IWorld> worlds = gameEngine.getWorlds();
 		assertFalse(worlds.isEmpty(), "The game-engine should come with at least one world.");
 		IWorld world = worlds.iterator().next();
-		gameEngine.start(world.getId());
+		Account james = new Account("James", "james@adventure.com");
+        gameEngine.start(world.getId(), james);
 		
-		String result = gameEngine.execute("get key");
+		String result = gameEngine.execute(james, "get key");
 		assertEquals(result, "You pick-up a key.");
 	}
 
 	@Test(expectedExceptions = TextAdventureRuntimeException.class)
 	public void startGameEngineNoWorlds() {
 		GameEngine gameEngine = new GameEngine(new WorldRepository());
-		gameEngine.start("house-quest");
+		gameEngine.start("house-quest", new Account("James", "james@adventure.com"));
 	}
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void startGameEngineNoUser() {
+        GameEngine gameEngine = new GameEngine(new WorldRepository());
+        gameEngine.start("house-quest", null);
+    }
 
 }

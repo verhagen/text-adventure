@@ -57,7 +57,7 @@ public class World extends Object implements IWorld {
 	}
 
 	@Override
-	public String execute(ICommand command, String[] args) {
+	public String execute(ICommand command, String args) {
 		TextVisitor visitor = new TextVisitor();
 		command.execute(player, visitor, args);
 		return visitor.asText();

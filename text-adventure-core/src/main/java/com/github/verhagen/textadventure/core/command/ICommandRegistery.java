@@ -6,4 +6,6 @@ public interface ICommandRegistery {
 	
 	ICommand get(final String nameOrAlias);
 
+    Boolean exists(final String nameOrAlias);
+
 }

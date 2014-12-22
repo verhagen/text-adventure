@@ -82,7 +82,7 @@ public class CommandRegisteryTest {
     	}
     
     	@Override
-    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    	public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
     		// nothing
     	}
     }
@@ -94,7 +94,7 @@ public class CommandRegisteryTest {
         }
     
         @Override
-        public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+        public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
             // nothing
         }
     }
@@ -106,7 +106,7 @@ public class CommandRegisteryTest {
     	}
     
     	@Override
-    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    	public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
     		// nothing
     	}
     }
@@ -118,7 +118,7 @@ public class CommandRegisteryTest {
     	}
     
     	@Override
-    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    	public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
     		// nothing
     	}
     }
@@ -130,7 +130,7 @@ public class CommandRegisteryTest {
     	}
     
     	@Override
-    	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    	public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
     		// nothing
     	}
     }

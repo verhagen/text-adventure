@@ -13,6 +13,6 @@ public interface ICommand {
 
 	String getDescription();
 	
-	void execute(IPlayer player, IObjectVisitor visitor, String[] args);
+	void execute(final IPlayer player, final IObjectVisitor visitor, final String argument);
 
 }

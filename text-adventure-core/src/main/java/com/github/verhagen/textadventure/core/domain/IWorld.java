@@ -6,6 +6,6 @@ public interface IWorld extends IObject {
 
 	void start(final IPlayer player);
 
-	String execute(final ICommand command, final String[] args);
+	String execute(final ICommand command, final String argument);
 
 }

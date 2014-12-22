@@ -50,6 +50,7 @@ public class WorldRepositoryTest {
 		World world = new World("The house quest", "Find your way out of the house.");
 		world.add(createKitchen());
 		ILocation hall = createHall();
+		hall.add(ItemTest.createBook());
 		world.add(hall);
 		world.add(createLiving());
 		world.setStartLocation(hall.getId());

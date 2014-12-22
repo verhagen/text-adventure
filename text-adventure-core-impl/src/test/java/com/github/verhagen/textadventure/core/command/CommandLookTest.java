@@ -38,7 +38,7 @@ public class CommandLookTest {
 		String expected = "You are in a crypt. The crypt is cold and dark. A slight beam of light, shows that the tomb stands in the middle of the room."
 				+ " Items: tomb";
 		
-		String result = world.execute(look, new String[] { "tomb" });
+		String result = world.execute(look, "tomb");
 		assertEquals(result, expected);
 	}
 

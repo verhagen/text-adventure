@@ -37,6 +37,7 @@ public class CommandRegistery implements ICommandRegistery {
 		return Boolean.FALSE;
 	}
 
+	@Override
 	public Boolean exists(final String nameOrAlias) {
 		return commands.containsKey(nameOrAlias);
 	}

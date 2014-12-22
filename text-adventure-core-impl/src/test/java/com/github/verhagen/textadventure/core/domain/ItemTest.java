@@ -177,7 +177,7 @@ public class ItemTest {
 		assertEquals(couchB.getDescription(), description);
 	}
 
-	private Item createBook() {
+	static Item createBook() {
 		return new Item("book", "TRS-80 Assembly-Language Programming");
 	}
 

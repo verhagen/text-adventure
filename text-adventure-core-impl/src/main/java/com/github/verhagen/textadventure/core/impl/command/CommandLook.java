@@ -10,7 +10,7 @@ public class CommandLook extends AbstractCommand {
 	}
 
 	@Override
-	public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+	public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
 		player.getLocation().accept(visitor);
 	}
 

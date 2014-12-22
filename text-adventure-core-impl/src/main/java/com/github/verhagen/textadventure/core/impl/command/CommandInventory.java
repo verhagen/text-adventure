@@ -13,7 +13,7 @@ public class CommandInventory extends AbstractCommand {
     }
 
     @Override
-    public void execute(IPlayer player, IObjectVisitor visitor, String[] args) {
+    public void execute(IPlayer player, IObjectVisitor visitor, String argument) {
         Set<IItem> items = player.getItems();
         if (items.size() == 0) {
             visitor.append("You are not carrying anything.");

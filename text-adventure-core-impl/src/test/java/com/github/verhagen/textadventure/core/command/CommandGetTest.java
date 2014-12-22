@@ -12,23 +12,23 @@ import com.github.verhagen.textadventure.core.impl.domain.World;
 public class CommandGetTest {
 
     @Test
+    public void getMap() {
+        IWorld world = CommandLookTest.createWorld();
+        world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
+        CommandGet get = new CommandGet();
+        String result = world.execute(get, "map");
+        
+        assertEquals(result, "You took the map");
+    }
+
+    @Test
     public void getNothingNull() {
         IWorld world = CommandLookTest.createWorld();
         world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
         CommandGet get = new CommandGet();
         String result = world.execute(get, null);
         
-        assertEquals(result, "Wat should be taken?");
-    }
-
-    @Test
-    public void getNothingEmptyArray() {
-        IWorld world = CommandLookTest.createWorld();
-        world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
-        CommandGet get = new CommandGet();
-        String result = world.execute(get, new String[] {});
-        
-        assertEquals(result, "Wat should be taken?");
+        assertEquals(result, "What should be taken?");
     }
 
     @Test
@@ -36,9 +36,9 @@ public class CommandGetTest {
         IWorld world = CommandLookTest.createWorld();
         world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
         CommandGet get = new CommandGet();
-        String result = world.execute(get, new String[] { "" });
+        String result = world.execute(get, "");
         
-        assertEquals(result, "Wat should be taken?");
+        assertEquals(result, "What should be taken?");
     }
 
     @Test
@@ -46,9 +46,9 @@ public class CommandGetTest {
         IWorld world = CommandLookTest.createWorld();
         world = CommandLookTest.createWorld((World)world, new Item("map", "A map that shows the labyrinth."));
         CommandGet get = new CommandGet();
-        String result = world.execute(get, new String[] { "  " } );
+        String result = world.execute(get, "  ");
         
-        assertEquals(result, "Wat should be taken?");
+        assertEquals(result, "What should be taken?");
     }
 
 }
