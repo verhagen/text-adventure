@@ -1,3 +1,3 @@
-# Text Adventure Core - API
+# Text Adventure Engine - API
 
-This module contains the __Text Adventure__ engine API.
+This module contains the __Text Adventure Engine - API__.
