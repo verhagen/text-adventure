@@ -17,25 +17,25 @@ import com.github.verhagen.textadventure.core.impl.domain.Location;
 import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
 
 public class ItemInRoomSteps {
-	private ILocation room;
+	private ILocation location;
 	private Map<String, IItem> items = new HashMap<>(); 
 	
-	@Given("a room called hall")
-	public void givenARoomCalledHall() {
-		room = new Location("hall", "There is some light comming in the hall, through a window next to the front door.");
+	@Given("a location called $location")
+	public void givenARoomCalledHall(String locationName) {
+		location = new Location("hall", "There is some light comming in the hall, through a window next to the front door.");
 		items.put("book", new Item("book", "TRS-80 Color Computer Programs"));
 		items.put("key", new Item("key", "A cylinder key"));
 	}
 
 	@When("add item $item is given")
 	public void addItemIsGiven(String item) {
-		room.add(items.get(item));
+		location.add(items.get(item));
 	}
 
 	@Then("the description should be $description")
 	public void thenTheDescriptionShouldBe(String description) {
 		TextVisitor visitor = new TextVisitor();
-		room.accept(visitor);
+		location.accept(visitor);
 		
 		assertThat(visitor.asText(), equalTo(description));
 	}
