@@ -15,7 +15,7 @@ public class ItemInRoomFeature {
     ItemInRoomSteps player;
 
     @Test
-    public void ss() {
+    public void placeBookInTheHall() {
         // Given
         player.is_in_the_room_called("hall");
         // When
