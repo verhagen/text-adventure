@@ -8,11 +8,17 @@
 	    <version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-    <artifactId>text-adventure-core</artifactId>
-    <name>Text Adventure - Core API</name>
+    <artifactId>text-adventure-engine-impl</artifactId>
+    <name>Text Adventure - Engine</name>
     <packaging>jar</packaging>
     
     <dependencies>
+    	<dependency>
+		    <groupId>com.github.verhagen.text-adventure</groupId>
+		    <artifactId>text-adventure-engine</artifactId>
+		    <version>${project.version}</version>
+    	</dependency>
+
 		<!--  Compile time libraries  -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -31,16 +37,4 @@
 			<artifactId>testng</artifactId>
 		</dependency>    	
     </dependencies>
-
-    <build>
-    	<plugins>
-    		<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<skipTests>true</skipTests>
-				</configuration>
-    		</plugin>
-    	</plugins>
-    </build>
 </project>

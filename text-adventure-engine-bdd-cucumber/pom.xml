@@ -8,21 +8,15 @@
 	    <version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-    <artifactId>text-adventure-cucumber</artifactId>
+    <artifactId>text-adventure-engine-bdd-cucumber</artifactId>
     <packaging>jar</packaging>
-    <name>Text Adventure - BDD with Cucumber</name>
+    <name>Text Adventure Engine - BDD with Cucumber</name>
     <description>Text Adventure - Behaviour-Driven Development with Cucumber</description>
     
     <dependencies>
-    <!--
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-		</dependency>    	
-    -->
 		<dependency>
 		    <groupId>com.github.verhagen.text-adventure</groupId>
-		    <artifactId>text-adventure-core-impl</artifactId>
+		    <artifactId>text-adventure-engine-impl</artifactId>
 		    <version>${project.parent.version}</version>
 		</dependency>
 		<!--
