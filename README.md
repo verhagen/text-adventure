@@ -1,3 +1,6 @@
+[![Build Status](https://snap-ci.com/verhagen/text-adventure/branch/master/build_image)](https://snap-ci.com/verhagen/text-adventure/branch/master)
+
+
 # Text Adventure
 ==============
 
