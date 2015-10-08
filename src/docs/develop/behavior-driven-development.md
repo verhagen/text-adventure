@@ -13,12 +13,15 @@ is a good starting point for getting the idea.
 
 At the moment this project also functions as a test case for the BDD libraries 
 [JBehave](http://jbehave.org/) and  
-[Cucumber for Java](http://cukes.info/).
+[Cucumber for Java](http://cukes.info/) and
+[Serenity](http://www.serenity-bdd.info/).
 
 - Maven module [text-adventure-cucumber](https://github.com/verhagen/text-adventure)
 - Maven module [text-adventure-jbehave](https://github.com/verhagen/text-adventure)
+- Maven module [text-adventure-serenity](https://github.com/verhagen/text-adventure)
 
 
 ## Useful Links
 
 - [Behaviour Driven Development: By Example](http://www.ryangreenhall.com/articles/bdd-by-example.html) (JBehave 2)
+- [An Introduction to BDD Test Automation with Serenity and JUnit](http://thucydides.info/docs/articles/an-introduction-to-serenity-bdd-with-junit.html)
