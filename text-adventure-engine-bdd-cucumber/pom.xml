@@ -10,7 +10,7 @@
 
     <artifactId>text-adventure-engine-bdd-cucumber</artifactId>
     <packaging>jar</packaging>
-    <name>Text Adventure Engine - BDD with Cucumber</name>
+    <name>Text Adventure - Engine - BDD with Cucumber</name>
     <description>Text Adventure - Behaviour-Driven Development with Cucumber</description>
     
     <dependencies>

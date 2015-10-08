@@ -9,11 +9,11 @@
     <packaging>pom</packaging>
     
     <modules>
-    	<module>text-adventure-serenity</module>
     	<module>text-adventure-engine</module>
     	<module>text-adventure-engine-impl</module>
     	<module>text-adventure-engine-bdd-cucumber</module>
     	<module>text-adventure-engine-bdd-jbehave</module>
+    	<module>text-adventure-engine-bdd-serenity</module>
     </modules>
 
 	<properties>

@@ -10,7 +10,7 @@
 
     <artifactId>text-adventure-serenity</artifactId>
     <packaging>jar</packaging>
-    <name>Text Adventure - BDD with Serenity</name>
+    <name>Text Adventure - Engine - BDD with Serenity</name>
     <description>Text Adventure - Behaviour-Driven Development with Serenity</description>
 
 	<properties>

@@ -9,7 +9,7 @@
 	</parent>
 
     <artifactId>text-adventure-engine-impl</artifactId>
-    <name>Text Adventure - Engine</name>
+    <name>Text Adventure - Engine Implementation</name>
     <packaging>jar</packaging>
     
     <dependencies>
