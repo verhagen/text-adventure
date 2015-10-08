@@ -12,7 +12,11 @@
     <packaging>jar</packaging>
     <name>Text Adventure - BDD with Serenity</name>
     <description>Text Adventure - Behaviour-Driven Development with Serenity</description>
-    
+
+	<properties>
+		<serenity.version>1.1.14</serenity.version>
+	</properties>
+
     <dependencies>
 		<dependency>
 		    <groupId>com.github.verhagen.text-adventure</groupId>
@@ -23,13 +27,18 @@
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-journey</artifactId>
-			<version>1.1.14</version>
+			<version>${serenity.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>net.java.dev.jna</groupId>
 					<artifactId>jna</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-junit</artifactId>
+			<version>${serenity.version}</version>
 		</dependency>
     </dependencies>
 
