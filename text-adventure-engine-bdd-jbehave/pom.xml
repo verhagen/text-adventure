@@ -38,6 +38,7 @@
 						<id>run-stories-as-embeddables</id>
 						<phase>integration-test</phase>
 						<configuration>
+							<skip>true</skip>
 							<includes>
 								<include>**/ItemInRoom.java</include>
 								<include>**/ItemInItem.java</include>
