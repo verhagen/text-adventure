@@ -6,11 +6,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.github.verhagen.textadventure.core.domain.IItem;
-import com.github.verhagen.textadventure.core.domain.ILocation;
-import com.github.verhagen.textadventure.core.impl.domain.Item;
-import com.github.verhagen.textadventure.core.impl.domain.Location;
-import com.github.verhagen.textadventure.core.impl.domain.TextVisitor;
+import com.github.verhagen.textadventure.engine.domain.IItem;
+import com.github.verhagen.textadventure.engine.domain.ILocation;
+import com.github.verhagen.textadventure.engine.impl.domain.Item;
+import com.github.verhagen.textadventure.engine.impl.domain.Location;
+import com.github.verhagen.textadventure.engine.impl.domain.TextVisitor;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
