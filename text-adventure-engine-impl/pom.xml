@@ -60,10 +60,11 @@
 						<configuration>
 							<forkCount>0</forkCount>
 							<suiteXmlFiles>
-								<suiteXmlFile>src/test/resources/testng-GameEngine.xml</suiteXmlFile>
+								<suiteXmlFile>testing.xml</suiteXmlFile>
 							</suiteXmlFiles>
 							<!--
 								<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+								<suiteXmlFile>src/test/resources/testng-GameEngine.xml</suiteXmlFile>
 							-->
 						</configuration>
 					</plugin>
