@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/verhagen/text-adventure.svg?branch=master)](https://travis-ci.org/verhagen/text-adventure)
 [![Build Status](https://snap-ci.com/verhagen/text-adventure/branch/master/build_image)](https://snap-ci.com/verhagen/text-adventure/branch/master)
 
 
